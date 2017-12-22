@@ -1,0 +1,692 @@
+Game of thrones => An array of books
+
+Array is an list of item where order matters.
+sometimes arrays have fixed size.
+Arrays used to refer to a list or sequence of things.
+Arrays represents a reference to a group of things, not the things itself.
+
+Arrays point to numbers and strings.
+Copies of numbers and strings are created when an array referes to them.
+Objects are not copied, therefore multiple array referring to the same object or same array ponting to them in multiple.
+
+Milk in a shopping list. cross the milk but milk doesn't go away..it still there..
+
+making a shopping list of ingredients
+
+Keeping track of steps in a recepie is an array.
+Spelling words in a spelling bee is an array.
+
+Playing solitaire alone in a dimply lit room.
+playing a song in your piano with your friends and coworkers.
+
+Why js arrays are special?
+--------------------------
+
+	Arrays has no fixed size.
+	Arrays values are accessed by  numbers and strings.
+	JS arrays are called array-like objects.
+	Most flexible arrays in any prog langs.
+	Has more built-in functions.
+	JS arrays can have some values hidden from iterators.
+	Can have any kind of object and of any types.
+
+Arrays vs Objects:
+------------------
+
+	Arrays:
+	-------
+
+	Elements can be accessed in consistent order.
+	can be iterated using for or for..each loops and built in methods.
+	Can hold any number of references.
+
+	Objects:
+	--------
+
+	Order for object properties not guarenteed.
+	Can be iterated using for..in loop.
+	can hold any no of references.
+	Best for collections where each element has a unique key and order is not important.
+
+Conclusion:
+-----------
+
+	Arrays represent a list of references.
+	Order of the elements in an arrays is important.
+	Flexible and of any size.
+	difference between objects and arrays 
+	Arrays hold references to objects but copy strings,numbers and booleans
+
+Arrays:
+--------
+
+	Arrays are creatd using array literal syntax. [1,2,3,5]
+	Arrays can also be created using the new keyword  // var arr = new Array();
+	Arrays can be created by copying other arrays.(advanced)
+
+Accessing array elemenets:
+-------------------------
+
+Access using array index // array[0];
+
+let num =1;
+arr[num] // Jon
+
+Adding elemenets to an array: 
+-----------------------------
+
+	push => adds to the end and returns the length.
+
+	splice:
+	------
+
+	a.splice(index,how_much_to_delete,data_to_be_added)
+	returns items that are removed.
+
+	let names = ['John','Arya','GOkul','Deepak'];
+	names.splice(2,0,'Rickon')
+	let names = ['John','Arya','Rickon','GOkul','Deepak'];
+
+	Return the delete elements in an array.
+
+	concat:
+	-------
+	Add all elements in an array can be added to another array using concat.
+
+	let b = ['Hodor','Thenn','Greyjoy','Deepak'];
+	a.concat(b);
+	Adds b to the end of a
+
+	a[10] = 'Bran';
+	undefined x 4
+
+	Elements can be added using refereing to the specific index.
+	Array size is increased by 1
+
+Modifying Array elements:
+-------------------------
+
+	Array elements can be replaced by setting a new value to their index.
+	Strings and numbers removed this way are lost forever.
+	Objects removed this ways remain in memory unless no other references to them exist.
+	This method doesn't affect any other elements or change their index.
+
+Using Strings as indexes:
+-------------------------
+
+	Arrays can have properties accessed by strings, but technically not elements of an array.
+	Loops cannot access elements with string indexes.
+	Don't use string indexes.
+
+	let names = ['John','Tyrion','tywin','Jamie'];
+	names[1];
+	names['a'] = 'Cersei';
+	names['a'] // Cersei
+	names [Cersei not found]
+	names[false] = 'Euron';
+	names[false] // Euron
+
+	Euron and Cersei are hidden so we cannot iterate.
+
+Removing Array Elements:
+------------------------
+
+	Index of removed item can be set to undefined 
+		Doesn't affect index of other items.
+		Leaves a hole in the array.
+
+	Elements can be removed using the splice operator.
+		Reduces index of all subsequent elements by 1
+		Leaves no hole in the array.
+		Previous array element remain unchanged.
+
+	names
+	names[1] = undefined;
+	['Tyrion',undefined,'Jamie'];
+
+	names.splice(index,length,data);
+
+	names.splice(0,1)// removes tyrion and returns it.
+
+Conclusion:
+----------
+
+	create an array = let a=[];
+	Add an array = a.push(2);
+	Remove the last elements of the array => a.pop()
+	Remove 3rd element => a.splice(2,1);
+	Replace element of an array = a[3] = 'e';
+	get references to second element a[1]
+
+
+Array Iteration and Reduction:
+------------------------------
+
+	Peforming the same action on a element is called Iteration.
+	Taking an array and turning it into a single value is called a reduction.
+
+	Built-in arrays:
+	----------------
+
+		Maps
+		Filters
+		For Each
+
+	Few ways to reduce :
+	---------------------
+
+		Reduce 
+		Every
+
+	Why iterate over arrays:
+	------------------------
+
+		Arrays can have large amount of info, which can have discern meaning.
+		Arrays can contain a variety of elements, some of which are useful for what you need.
+		Elements can be incorrect or inconsistent.
+		Array elements can be in wrong order.
+
+	For loop:
+	--------
+
+	For loops are flexible but difficult to understand.
+	loops through all elements of an array.
+	can be used for any operation that needs to occur a set number of times, not just arrays.
+
+
+	let array=['Narayanan','Girija','Subramanian'];
+
+	for(var i=0; i<array.length;i++){
+		let names = array[i];
+
+		console.log(names);
+
+	For..each loops:
+	----------------
+
+		Similar to for loops but works only for arrays.
+		Less flexible and useful for other purposes.
+
+		A function will run for every element of an array, which will be passed arguments corresponding to each element and its index.
+		
+		
+				let colors = ['blue','green','yellow'];
+				colors.forEach((e,i)=>{
+					console.log('element is ${e}');
+					console.log('index is ${i}');
+				});
+			}
+		
+			Don't remove elements when iterating through them.
+		
+		
+			let num = [1,2,3,4,5];
+		
+			num.forEach((e,i)=>{
+			console.log(${e}});
+			if(i==2){
+				numbers.splice(i,1);
+			}
+
+			let num = [1,2,3,4,5];
+
+			for(var i=num.length;i>0;i--){
+				var e = num[i];
+				console.log(${e}});
+				if(i==2){
+					numbers.splice(i,1);
+				}
+			}
+	});
+
+	While loops:
+	------------
+
+		Most brief loop to write.
+		While loop easily crashes on Chrome or Node.js server.
+		Not recommended to use while loops.
+
+
+		let num =  [1,2,3,4,5];
+
+		var i= 0;
+		while(i<numbers.length){
+			var numbers = num[i];
+			console.log(numbers);
+			i++;
+		}
+
+	Array Filters:
+	--------------
+
+		used to remove unwanted array elements.
+		An array filter is a safe way to remove multiple elements from an array at once.
+		Creates a new array with every element in an array that pass a test
+		Creates a copy of the original array with equal or fewer elements(original array no changed).
+		JS has built-in function called Filter.
+		Think of it like an air filter.
+
+		let number = [1,6,2,8,9,5,7,4];
+		 4>5
+		 [6,8,9,7]
+
+
+		let digits = [1,23,56,72,12123,12];
+		digits.filter(function(d=>d %2 == 10) // [23,56,72,12123,12]
+
+		Create a function that takes an array of names, and returns an array of only those names that start with "J"
+
+	Array Maps:
+	-----------
+
+		The map() method creates a new array with the results of calling a function for every array element.
+
+		The map() method calls the provided function once for each element in an array, in order.
+
+		array.map(function(n){return (n*2)})
+		[2,7,5,8,4,1,9]
+
+			9 * 2 = 18
+
+		[4,14,10,16,8,2,18]
+
+		used to transform each element of an array in the same way.
+		can turn array of objects into array of strings.
+
+		Like filter, creates a copy.
+		Maps have the same number of elements in them as original.
+
+		Think of it as an assembly line.
+
+
+		let cars =['Mustang','Cmaero','Tesla','Volvo','Audi'];
+
+		cars.map(c=>c.length) // [7,6,5,5,4]
+
+		cars.map(c>c[0]); ['M','C','T','V','A']; firt letter of every car
+
+
+		let numbers=[1,2,3,4,5,6,7,8];
+
+		let map = n=>n*n;
+		numbers.map(map);
+
+	Array Reductions:
+	=================
+
+		Reducing arrays to single elements
+
+		Taking all the elements of an array and changing it into a single value.
+
+		Example is to reduce an array of elements into sum of all those elements.
+
+		Reduction are very useful for crystalizing of pieces of data into just one number of Boolean or string etc.
+
+		Think of it as a large bowl of soup and boiling the excess way until only one serving remains at the bottom.
+
+
+		let numbers = [1,2,3,5,6,7,8];
+
+		numbers.reduce((a,b)=>{
+			console.log(a,b);
+			return a+b;
+		},10);
+
+		numbers.reduce((a,b)=>{
+			console.log(a,b);
+			a[b] = b;
+			return a;
+		},10);
+
+		Reductions Every and Some:
+		--------------------------
+
+			Turns an entire array into a single true/false value.
+			The function passed to every or some which determines if an array element passes is called a predicate.
+
+			.every():
+			---------
+
+				Returns true if the predicate is true for every element.
+				Checks if every element in an array pass a test
+
+			.some():
+			--------
+
+			Checks if any of the elements in an array pass a test
+			returns true if the predicate is true for one or more element.
+
+
+		let num = [1,22,33,54,65,76,87];
+
+		num.some(n=>n>20) // true
+		num.every(n=>n>20) // false
+		num.every(n=>n>0) // true
+
+		array.find(n=>n>20)// 22
+
+
+	Array Reductions Includes:
+	-------------------------
+
+	Returns true if any element of the array element matches the value that is passed.
+
+	similar to .some()
+
+	New to ES6
+
+	Would have been called "contains" except for historical reasons.
+
+	let array = [1,22,15,54,65,76,87];
+	array.includes(10)//false
+	array.includes(15)//true
+
+	Chaining Array methods:
+	----------------------
+
+		[1,2,3,5].map(a=>a*a).reduce((a,b)=>a+b) //30
+
+		Chaining can create complex operations like reduction and map filters.
+
+		JS is one of the existing language for chaining array methods.
+
+		Recommended process for the dealing with large amounts of data
+
+		let num =[1,3,4,5,6];
+		num.map(n=>n*n).filter(n=>n%2==0).reduce((a,b)=>{return a+b}) //20
+
+	Conclusion:
+	-----------
+
+		It's often necessary to reduce arrays to just one value - use a reduction for that.
+		While loops are dangerous.
+		Removing element from an array while looping is not recommended.
+		JS has built-in map,filter and reduce functions. 
+
+		map,filter,reduce,some,every,includes are most useful built-in functions.
+
+		Knowledge can be directly applied to front-end code or backend code on a Node.js platform.
+
+	Coding Excersice:
+	------------------
+
+	Provide a function that takes an array of numbers, and returns the sum of the arrays (as a number, not an array).
+
+	function sum(array) {
+
+	}
+
+	Quiz:
+
+	A function which takes an entire array and returns just one thing is called an reduction/fold
+
+	If you are looping through the area[1,2,3,4] and remove the number 2 while iterating over it, what will be the next number passed to the iterator?  Answer: 4
+
+	Built-in methods that return an array with equal or lesser size in which some or all elements are present is called a Filter method.
+
+	The forEach method is similar to for loops 
+
+	map methods return the same no of elements as the original array possessed // true
+
+	Built-in filter creates a copy of an array. // true
+
+	what is the result of [1,2,3,4,5,6,7].filter(n=>n>3) // [4,5,6,7]
+
+	what is the name of the method that is passed to every and some // predicate.
+
+
+
+Sorting in JS:
+--------------
+
+	Order of the array matters and doesn't change on its own.
+	Changing the order of some or all elements of an array is called sorting.
+	We will cover built-in sorting methods.
+	Look at sorting in external libraries in a later chapter.
+
+Why sort arrays:
+----------------
+
+	Sometimes array of elements are in particular order desired.
+	Sorting is useful for creating an array ranging from smallest to largest and Ascending to Descending.
+
+Built-in Array methods:
+=======================
+
+	JS Arrays have a built-in sort method.
+	If no argument is passed,each element of an array is interpreted as a string and put in order.
+
+	Produces wrong result.
+	Using default sorting methods without arguments is not recommended.
+	This method modifies the original array.
+
+
+	Built-in array sort method takes a function as an argument.
+	Function takes 2 arguments,a and b, representing any 2 potential elements of an array.
+	If a number less than 0 is returned,then a should have a lower index than b in the final array.
+
+
+	let array = [1,5,15,7,25,6,19,7];
+	array.sort();
+
+	array.sort((a,b)=>{return a > b?-1:1});
+
+	[25,19,15,7,7,6,5,1] // descending order
+
+	array.sort((a,b)=>{return a < b ? -1:1});
+	[1,5,6,7,7,15,19,25] // ascending order
+
+
+
+	Conclusion:
+	-----------
+
+		Sorting arrays is practical for many practical apps.
+		builtin sort function shouldn't be used without arguments.
+		using the built-in sort function changes the array.
+		custom sort funciton work better and can be written to order,or there are many useful oens in external libraries(more on this later chapter)
+
+
+
+	ES6 Array Operators
+	--------------------
+
+		ES6 is a new version of JS became widely supported in 2015-16
+		ES6 introduced new and unique array operators to JS.
+		Rest and Spread operators both look like eclipses ...
+		Very convenient to use
+
+		Spread Operators:
+		================
+
+		Expands an array.
+		Convenient shorthand
+		Takes an array and spreads it out into all its elements.
+		Only workds while defining arrays.
+
+
+		let array = ['Narayanan','Deepak','GOkul','John','Raj'];
+
+		['Doe','Jane','Bran',array[0],array[1]];
+		['Doe','Jane','Bran',...array,'Brandon']
+
+
+		Rest Operator:
+		---------------
+
+		Takes all arguments passed to a function and turns them into an array.
+		useful for function with lots of arguments passed to it.
+		only works inside function declaration.
+
+		function hello(a,b,...c){
+			console.log(a,b,c);
+		}
+
+		hello(1,2,3,4,5)
+		1,2[3,4,5]
+
+
+		Conclusion:
+		=========
+
+		Rest and spread operators add syntatic sugar to code involving arrays.
+		not necessary to use Rest and spread operators
+		only works in ES6 compatible environments.
+
+
+		JS Manipulation Libraries:
+		==========================
+
+		JS arrays for built-in funcitons but few.
+		write custom functions for product,sum,max etc is time consuming.
+		Libraries have been built to handle arrays. Lodash and Underscore.
+
+		D3.js has intersting function relating to math operations.
+
+		Use lodash to work with JS arrays.
+		Learn about D3.js
+		use D3.js built-in array methods.
+
+
+
+		Loadash and Underscore:
+		=====================
+
+		Both spelled like this : _
+		Underscore older, lodash newer,fresher and better tested.
+		Loadash implements all of Underscore's API
+		Loadash is recommended in all cases.
+
+		What can lodash do?
+
+		Chunk=> Break an array into smaller arrays.
+		Intersection=> make a new array out of common elements of two arrays.
+		Uniq=> creation a version with no duplicates.
+		Union=> unique plus Intersection
+		Tail=> get all the elements of an array except the first 
+
+		let numbers = [1,2,3,5,6,7,8,9];
+		_.chunk(numbers,2);
+		[Array[2],Array[2],Array[2]]
+
+		_.intersection([1,2,3],[2,3,4]);
+		_.uniq([1,2,31,2,3,4,5,6,7,8,9,9]);
+
+
+		D3.js Primer:
+		------------
+
+		D3- Data Driven Documents.
+		Created to help visualization for the NYT.
+		in D3, arrays are canonical data format.
+		D3 primary purpose is to display data using the DOM.
+		Also packed with loads of helper functions for working with arrays.
+
+
+		What can D3 do?
+		================
+
+		sum - reduce entire array into sum of its elements.
+		Ascending - a function to pass to sort which correctly sorts numbers
+		Mean - find the mean value of array of numbers.
+		Nest - sophisiticated data transformation to transform complex objects.
+		Shuffle - create a randomized array.
+
+		Conclusion:
+		------------
+
+		D3 and lodash have more than 50 functions to work with arrays,
+		Only ways to master to practice with them.
+		Before writing your own function for dealing with an array,checkif D3 or lodash has already created  them.
+
+		Both have big significant test suites.
+
+
+		Conclusion:
+		===========
+
+		An array is a reference of list of things.
+		Arrays are used in real life when we want to maintain a list of things that do not change.
+		JS arrays are more accurately referred to as arrays-like objects.
+		Arrays have many keys,not just integers but also strings.
+
+		Arrays elements can be added,removed and edited.
+		JS arrays are of any size.
+		Strings can be used as arrays indexes.
+		Many keywords for removing specific elements of an array,
+		Changing original or making copy?
+
+		Iteration and reduction:
+		========================
+
+		Arrays can shortend with filters or modified with maps.
+		A reduction reduces the entire array into a single value.
+		May Built-in functions are derived rom forEach.
+		JS has built in reduction such as every and some.
+		Modifying arrays when looping through can cause errors.
+		While loops should not be used.
+
+		Sorting array:
+		============
+
+		sorting changes order of the array.
+		Built-in sort function modifies the original array.
+		default sort function with no argument gives wrong errors.
+		D3 can be used for sort
+
+		ES6:
+		====
+		Both Spread and Rest are like eclipses: ...
+		Rest works when declaring a function
+		Spread works when declaring an array.
+		They don't do anything that cannot be done without these operators.
+
+		Array Manipulation libraries:
+		=============================
+
+		Loadash and Underscore are very similar- use lodash whe possible.
+		D3 foccused on processing arrays with Math.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
