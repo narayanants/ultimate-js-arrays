@@ -1,0 +1,91 @@
+To loop an array - for..each
+TO transform an array - array.map()
+TO remove elements from an array = filter()
+To turn array into a single element = reduce()
+If 1 element exists in array - some()
+If array includes that array - include()
+
+Create an array  =  let array = [];
+Add to an array = array.push('a');
+Remove last elemet = array.pop()
+Remove 3rd element from an array - array.slice(2,1)
+Replace element of an array - arra[3] = 'e'
+Get reference to 3rd array = array[1]
+
+What is an Array:
+==================
+
+Array is a list of items where order matters.
+Arrays can be of any size
+Array represents a reference to things not the things itself.
+Array points to numbers and strings.
+Copies are made of them when referenced.
+JS Arrays are referred to as array like objects.
+Can be accessed in consistent order.
+JS Arrays represent a list of reference to things.
+Arrays hold reference to objects.
+
+Referring to Array Elements:
+============================
+
+let arr1 = [1,2,3,4,5];
+array[0] // 1
+array[2]// 3
+
+
+Can be added using push
+can be added in middle using splice
+All elements can be added to another using concat.
+Elements can be remove using splice.
+
+
+Iterating arrays:
+==============
+
+for loop
+for..each loop
+
+Filter:
+======
+* Used to remove multiple elements from an array
+* Just like Air filter
+* creates a copy of an array
+
+Map:
+====
+Used to transform each element of an array in the same way
+can turn array of objects into array of strings
+creates a copy of an array
+same no of elements as original
+
+Reduce:
+======
+
+Take all elements of an array and reduce it to single element
+Reduce an array of number to sum of numbers
+Boil soup till we get single serving
+
+
+Some and Every:
+=============
+
+Turn entire array into true or false
+
+Function passed to every or some which determines an array element passes is called predicate
+
+every() - true for every element
+some() - true for one or more elements
+
+
+Inclues:
+========
+
+true if the element of array matches the passed element
+
+
+
+
+
+
+
+
