@@ -11,7 +11,7 @@ Objects are not copied, therefore multiple array referring to the same object or
 
 Milk in a shopping list. cross the milk but milk doesn't go away..it still there..
 
-making a shopping list of ingredients
+Making a shopping list of ingredients
 
 Keeping track of steps in a recepie is an array.
 Spelling words in a spelling bee is an array.
